@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RazaWorks - Digital Solutions by Sahil Raza</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card {
+            min-width: 300px;
+        }
+        /* Smooth scrolling for all browsers */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fbfa] font-['Inter','Noto_Sans',sans-serif]">
+    <!-- Single Navigation -->
+    <header class="flex items-center justify-between border-b border-[#e8f2ec] px-4 py-3 md:px-10 sticky top-0 bg-white z-50">
+        <div class="flex items-center gap-4 text-[#0e1a13]">
+            <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+                </svg>
+            </div>
+            <h2 class="text-lg font-bold tracking-[-0.015em]">RazaWorks</h2>
+        </div>
+        <div class="flex items-center gap-4 md:gap-8">
+            <div class="hidden md:flex items-center gap-6">
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#home">Home</a>
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#services">Services</a>
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#about">About</a>
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#testimonials">Testimonials</a>
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#pricing">Pricing</a>
+                <a class="text-sm font-medium hover:text-[#38e07b] transition-colors" href="#contact">Contact</a>
+            </div>
+            <!-- Get Started Button with WhatsApp Link -->
+            <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20get%20started!" 
+               class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#2bc467] transition-colors inline-block">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="min-h-[70vh] flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXNapNDwEJLiSQ4UIXZhqFD4_xp0nANT-F2YFjhuckcpmcEb9teYz-Lzdnts_ObuWbgRfTVQ00qNrsE8Ryu_Iyt2QbIG_GEuCKigyyU_r3X0gP3KJb229LM5naxBt4Cq2sr8TaF6lYAaJYWQty9O2bmqia1xZerzqvIrbQ1EeVGQsr1R3mUBACvBFbLTttnG9FTb-KR88On0aiD10BEFKaJLeX3T52MSShchWdegk_5B0P-KfqVsoYH0Am3iGqo8jyd-ThnihtI2k");'>
+        <div class="text-center text-white max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
+                RazaWorks: Digital Solutions by Sahil Raza
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                With 3 years of experience, I deliver ATS-optimized resumes, social media management, custom websites, branding, and more to help you succeed.
+            </p>
+            <!-- Hero Book Now Button with WhatsApp Link -->
+            <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20a%20service" 
+               class="bg-[#38e07b] text-[#0e1a13] px-8 py-3 rounded-lg text-lg font-bold hover:bg-[#2bc467] transition-colors inline-block">
+                Book Now
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section with Profile Image -->
+    <section id="about" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-32 h-32 md:w-48 md:h-48 bg-cover bg-center rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZUb2qm3YGO_RA-Sm0fm9-M235ODmkGGBIdF-LV5zwgq_gwH0fNSdiPINl5p3idP7UX2F8ue4iEWMa5ulgf1nRM232iem8mgmExc1SrU5dAaa4PzGhTyYEzxMi92XOIQsRCHp9GX9oGYme4UfappFCpXYC1UPGdJ83y7AErWPvuR8BfzQLmt5MM-CkuELc6T8vCDI7B4m16qk1yX-q8DPLgYjtHiQVXGNA1V6G6jLWnr_bXTOu4UN07dUEDRwmS27ADINSnjz6aNE");'></div>
+                <div class="flex-1">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">I'm Sahil Raza</h2>
+                    <p class="text-lg text-[#51946c]">
+                        A digital freelancer with 3 years of experience. My services, from ATS resumes to custom websites and branding, provide tailored solutions to elevate your career or business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with All Service Images -->
+    <section id="services" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-lg text-[#51946c] max-w-2xl mx-auto">
+                    We provide a comprehensive suite of digital services to meet your needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1: Cyber Cafe Services -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUslB7mwT_EtS_oWKn-E1qes_c5-ByQv6Q9TM9EXwut8n09KakBvsvxNzqUG5A3wAdcwqXQHu5VaAHVmSGf4fhUMW09paM9hKPGIRhrY5Q3kH0AMMvMfuqAIFpjS1RJ0J6r9eekulF3cGqVrNHVrpKjQTMbmu7yfEJBUi01gXLv917o8cd4qYDfydpbmJ8zhR0QTw-ts06IRDpWbnvqysRSRZzNRhAxtRZH1Cwc9CS7ETRunWzeHbmk1uT-fCYJAdS_BrjzcW2bEs");'></div>
+                    <h3 class="text-xl font-bold mb-2">Cyber Cafe Services</h3>
+                    <p class="text-[#51946c] mb-2">Form filling, email setup, scanning</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹50-300</p>
+                    <!-- Book Now Button with WhatsApp Link -->
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Cyber%20Cafe%20Services" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 2: Government Applications -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKFXfOnsYH6FIesdFjPhrQghOnodvmVC0SZ_laPT-aJCxk6mLKWB6qdBDxTnLpJ2W2oOAg8xuWMXk7dGBzVA1IlI7gBMxV6U2kbbulg6zL56aiD-rCpqh7US3vQ25LzRRoEmXtUWuac81LKQ_CSGThu3JQVdFQy2_zkEqh4EKjm7DDiuM9AwyszQLtfi1OrVC7pmpJigbxe-8amyh2Ouce8ssdr4syFVbzgLaa5USz7WslVloSOIZsfyY48tq7FmW0-gVeP3YlBSk");'></div>
+                    <h3 class="text-xl font-bold mb-2">Government Applications</h3>
+                    <p class="text-[#51946c] mb-2">PAN, Aadhaar, voter ID, licenses</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹100-500</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Government%20Applications%20service" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 3: Passport Photo Editing -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIzjn64kM3rftWzbV3xuvCUwbYlkk7Jhu-AGOvkLtupFPJHP-_T4fGm_2Yp6AOOxJGMW-VePQ4HxD0v4FskaxdYFJxtyoweMADHaSm58chrZ7ZLdj_OmcBGihy1jLiNNtBXZR6qcz890p7NK1Q1anF6xfUlDec4r6Ew00QK8xzuUbrcQ4AZaLx6UplDObfit5ZPAsAx0MCofmo5d8sduCzIAvpMfHZgXIraEt8bAGfxU0joAbTMGLbIeW_zMNyVBkFdLDmdtDTrs8");'></div>
+                    <h3 class="text-xl font-bold mb-2">Passport Photo Editing</h3>
+                    <p class="text-[#51946c] mb-2">Background removal, print-ready photos</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹50-200</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Passport%20Photo%20Editing" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 4: Digital Marketing -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbwaBlnOo3St8rcU_LLXpbfe6LCcMD6u1fUJFWAhEDkZJ8xAPhlfLxmBniYQMrCN2g4WxAhhggeyvmLOIdfpQaUOcPWlARaMEbKTHWTKfAYGfP2dzgoYUfwnHpopUWRUlDKnZ62YWlGyWbeSqVnZuxQKdGfveDiG3klIRilAZbTHMbxzwUotJ2KzkWL9WW73qh3E8e3v7lMhSZ6WakuPrRipKtXMAuGKW26L12WBOkE0keII00Si-UpSobWx10iDnLlHkeIS9gknM");'></div>
+                    <h3 class="text-xl font-bold mb-2">Digital Marketing</h3>
+                    <p class="text-[#51946c] mb-2">Social media posts, SEO, content creation</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹500-5000/month</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Digital%20Marketing%20service" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 5: Excel Data Analysis -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6xtJPXYpZ-7chQX5W-ggCFKDSERgCT3TBvU0B1raaYs2gN4OJ0tvSuoRcRwGFldfVMDl890k-XId-f9HkGP2-_ZJgjIRAJvw4vLDdv6X17pt6NIwMT_9vbqZ8jL9AIkVm2zf51zTQZPxWR6NS08-MAsOiUdayYV7phkz-0ZTA_jxltjuy2Y5z6Sys-BXW9YqM6ydFITngRa6TRf84Cl9lwgDkt7zElk8z4iAy0Op1RlKQavCJS0VTqWLU_le2VYeJQ3RDhMpzlvw");'></div>
+                    <h3 class="text-xl font-bold mb-2">Excel Data Analysis</h3>
+                    <p class="text-[#51946c] mb-2">Data entry, charts, pivot tables, formulas</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹200-1000/task</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Excel%20Data%20Analysis" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 6: PowerPoint Design -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlNuRAf2hetBCV6YkhxnU3Kf3EJb0QvsOCYYYQYvMrJv8wZWDRKBbEAPdJ6QpSVIukqIzdHZpmm8Z1Zcqg4IlttCwyCEG7Jxkj3L7Fk0dgT-IxTwiTft_Ztn0spCpwvGNjTsd--SnxgQO2G0ZoJ1ODHUjx5FZJtMoRgxGfAGzMEzUvMjtwZr_z9NLz-nu1qzYtRyv3oHwjtfiRCw97iYwqMSBnQqDdEl7t4Wnb9BJQDXuO7ZRhsmNHVociUqVj6kr3-GQclpoSu0Q");'></div>
+                    <h3 class="text-xl font-bold mb-2">PowerPoint Design</h3>
+                    <p class="text-[#51946c] mb-2">Presentations, pitch decks, animated slides</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹300-1500/deck</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20PowerPoint%20Design" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 7: Payment Solutions -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDY7qlni3zEvNICRC6n7i8mvGezmgfHcY_H_BikPBEFFfCfWPC7cL-D7omUziVGTgxaOGP64MhHgzNQVZHDwkQfe3dCVH37_n5mP1Q7QRw1yqf7OwxO2xwU_gjNkcMZNrQSZBHkKdV2V-9p_KY3BjgoAqLLm-YeAaUzzcFkT2iZh11NKw1ob_lvtaL0UOsPSCSIAvP75l7FmhJlN3P2Ss8JZB28AIzTGq9Eoi4TrU0KMvYHPSHNslBwBQjmQTznemwD_7MKVI2Vw6U");'></div>
+                    <h3 class="text-xl font-bold mb-2">Payment Solutions</h3>
+                    <p class="text-[#51946c] mb-2">UPI setup, QR codes, payment links</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹100-500/setup</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Payment%20Solutions" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 8: Social Media Content Creation -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgTGvW0Cs8z6wdYmgVX2hvO0R9Js1-8SfrAOiiNlFG7tLHaQtF62BbhWDmuS4oTE_AVk-ertLaCTWSVhCV6LSvyBZ6BIb1IG8OJXYKnCAjCFg0R5RotNzl-eMnEcoiY65MyWrL2AMOA6CQtPRX65isTguQ4pxYXQ86QEnPFJUIHpaFvhFBGtQk2FjhkoDFdk-ml76d2dH9Jbu_KT1pwpks5YWXiIxyiP9FEpohc-aovTYaHfgoKezDTxsprnfU4EpTYl1LgUcSaws");'></div>
+                    <h3 class="text-xl font-bold mb-2">Social Media Content Creation</h3>
+                    <p class="text-[#51946c] mb-2">Instagram reels, posts, stories</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹200-1000/post</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Social%20Media%20Content%20Creation" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 9: Graphic Design -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYA-emgbr1KrEDRFHhTnVTR5qnVo3NeYIr3itqRVHA49MYqYMHqGYdohActZiIcWlYvQCxJThPmSks6fcFjfynAw-QNwc-j8rbr4ObHJc1oPaGbGRNckoPKQ-pB608vatRux287ZmyfEJ3NZfKo4yR0kUtOsTu6v-9fCPqFMwpVFGZUWvQ_2319kQUPfxONZndLiJ_HHXgwEcYqdVjJYxN-uTk1e0yCmaQ_Wp3TxrDeAwmkAbN6C7bEaBTjaL-xGfgKwB_A1n51OI");'></div>
+                    <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
+                    <p class="text-[#51946c] mb-2">Flyers, logos, banners</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹200-1000/design</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Graphic%20Design" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 10: Website Testing -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMdPWKXWBrzQ-NOE-T_G8PN2b2XA-8YX9rJ4L0rulsETOiVu8tHrn66Egt3Ij27ukmtK_rG3cJA6AS4YMZy70X3kHuB6-aTq1S3dg7WwDwywLb7fUxbYbnjmNzss5y7hL1U7sVRwdWvT4qlB9dq4QpgPrMoDjiiq6N0Kod9wrh1MUdmeuUbMw1xGuqfos56DQwI_1bJl3rumZfV_NOE5um_GblTfU1KhvHga1oktuiIKPBMwtmRvWp5Ht8jQjf-1VMX05V0S5Dty4");'></div>
+                    <h3 class="text-xl font-bold mb-2">Website Testing</h3>
+                    <p class="text-[#51946c] mb-2">Test websites/apps for bugs, usability</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹200-1000/test</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Website%20Testing" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 11: AI Content Generation -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRv-YZWtEj_-lBBJ9wAWSsLPeAPfRV3f_aixVsfg0zQhoubZeuAmeuEtTRCAB8wl4qy-yfTc7_XS0m0Z9tM3NuyTnNuS7UzW_wtmHBpP6hfA-djIYBYyHS5_QmBek0GsTTIUW9PXmWP6KQzqEyCBKTH-N9Pd-8Y5Z-8NhjYw9EUXEFmXrisTmnsgUWuXJiP5zrdJuy_9Bh5YGXHcOyg_4w5MdWQsZcGnI0JaBgo6vM2bc8rmG53eigIxHc14Jo2gBZcneOCzL3VRg");'></div>
+                    <h3 class="text-xl font-bold mb-2">AI Content Generation</h3>
+                    <p class="text-[#51946c] mb-2">Custom art, copy, content creation</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹300-2000/item</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20AI%20Content%20Generation" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 12: Bookkeeping -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhvCCnO2WhDeXnPmU2WIGQYGxr9EvrSbJzhy-9SckoTC_3_c_k_VUP1bi_Tk9OUjXZ6J2jD44nYYqdw9WTUxDwFXNO52ccPoPP3A6ykgZacnWDNIXOqR-iVWneqxVPWtOrK4ZEC1mcRLgGNpXR5o1G4_afaygm_VFsHNdJLdzEQ0G6n26YHXfBnVLWdcHMmCH7VJ9pslJHIVMlWRTIsyin40iT9RFM-leZEBTpxomAeX2mY_d1gBAOgH8FW8ADSCb_psQyHgjs2N0");'></div>
+                    <h3 class="text-xl font-bold mb-2">Bookkeeping</h3>
+                    <p class="text-[#51946c] mb-2">Accounts, invoices, financial records</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹500-5000/month</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Bookkeeping%20service" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 13: Online Tutoring -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvjKng4LeYrwy7Mu0aNwf8MJxm12dKoYEvY9WgBq4ZZ3FFspv1cvnWfpPdSniDrmcEJDyfbSAiHJ1kw_VSX4AGfB6hWCWLYCF1PEXbbXLLcJeh_Yda6NzUyAVuX0PGHmxCFG7uHN3pRvOwTuUSBUFMMNyccZ1JAa5YwjHGEwflN9GHbgDUJ4JNhYgiwgR8jy-hF43rTsfhQEzHKwV2xnnd29UYJtm12eLFbPyeGq0oljZOQM6POQfTUc9FfMf_HFC1eQnSvPIA9SA");'></div>
+                    <h3 class="text-xl font-bold mb-2">Online Tutoring</h3>
+                    <p class="text-[#51946c] mb-2">Coding, languages, skills via video calls</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹300-1000/session</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Online%20Tutoring" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 14: Resume Editing -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTcxbYrMAy9TXNqYGN99_M_TO5RwcTUkmLK9bNvLy5upfV7cu4rdTNzp5jew7jMXmsmeBJhzV69oCTlVYRiGHMFR3AqFhulz0KMi6ilO_SYcr6V-66xY3kDG9HMX9q2e9dx5oc_wtm-KTsXsFqaLzAUoSTk2ZPchV3C371Metp_4K8lT-nSUimUKQWCwHbWRMF_z0X59G-C2wUQD1DONPyeuCePlAs5OWlhsv9SEiPqLZV-RohJJ7QKYS0r8C3gHz1BtfEpRwpO9Q");'></div>
+                    <h3 class="text-xl font-bold mb-2">Resume Editing</h3>
+                    <p class="text-[#51946c] mb-2">Optimize professional resumes</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹200-500/resume</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Resume%20Editing" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 15: Professional Resume Writing -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA06a4rojaBHyiuvx45fzyTjwWPLXGN31iRvsBuoZDvlmyr2MhQCM_xxKluAV67n66PSlBuJHZvnOu5Si0i-zlblzqWMYNLbHYGIsJNOpl8txFuLWMTaq1Y1BU6LojI1KJGzknTSIxfBdKe7ouoERj4W78U-8HYLATToQXUKnacVuQBK4_3iAnTvUDHDJoAa4uXZuIXIrfBZ2pQq57V2Ev6HMlx05tDVbzTg_iqv8GVFq7jNP2lwSc2MmgEbkZg262WcFL9li4Bm40");'></div>
+                    <h3 class="text-xl font-bold mb-2">Professional Resume Writing</h3>
+                    <p class="text-[#51946c] mb-2">ATS-optimized, job-focused resumes</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹500-2000/resume</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Professional%20Resume%20Writing" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 16: Social Media Management -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTvjfoMKfNM0RUNeRWesQWRF95Zpt_zwM-vFrth-h3k4voMEV4PYQJpdWW2-fayWPSDZ2VuDF4WjQB4bA4vKDBxqdwzwSmgHxTQCr3DwT6gIFAyRBnGPm-BETVjzeU0lcFaCF_TCzxZBc8B71UpRwXvs7DY8KOE2G2i0cUcxsLwKrYCAwuaTr_AomY4b43EXg1jrhsoOXT4InSEL6b-wBTIflrJD9Qvli-182bX_eZDJe-fFdEx_TljsSQ5KCtnSEXR9abOsEsk7Q");'></div>
+                    <h3 class="text-xl font-bold mb-2">Social Media Management</h3>
+                    <p class="text-[#51946c] mb-2">Account handling, scheduling, analytics</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹1000-5000/month</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Social%20Media%20Management" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 17: Website Building -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXrNFwO9FT9yZwtGN9HSSwcqyAoNSFtB9czWa9wfr70VZra_X833jbRE2unc2HsrpBHPOK-q7gcItf4OdmJ5aDmOQ-I-aKP3g6Ub149TuNwotcn27D8DZ32ysk2TXcXFwC0y1z7U7mncjRxzbFvSgDptSV6V00e8hZqyHdop64oWxEBvjDD_JOT1O8kG-A0UFJY9DHr8Ys20xPfnylryvKpqGiPp8XhAmPJs_qTBfo5C04Z7QzLdUtfLbGnUnGZIreE45umkX2z7E");'></div>
+                    <h3 class="text-xl font-bold mb-2">Website Building</h3>
+                    <p class="text-[#51946c] mb-2">Custom websites using no-code tools</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹2000-10000/site</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Website%20Building" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 18: Mockup Design -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjH2uu2-pWFXjIuvrTKuWXnY6s-lT1rDOhkSJgCMS5rKLm-E86qYH2wYt6u_QkD8_1N2rCHvE36xRuGPVBbKeKO8mxx1shCANHCsNcGUwPmMCCKX33eIL-sdE5XsTziTz1KLKh3lPcrXM_S502BSsJPDPmYS62OpbifJ-lGXStnY9tR95LmcRt5TLIXDp0tClIfW55k_6N0gJuqg_9TeE-c9vP1yq7Q09JJ9ERQqYzJ4RVit0dijV8J22A-A8u-joRj6k5WQa9DMA");'></div>
+                    <h3 class="text-xl font-bold mb-2">Mockup Design</h3>
+                    <p class="text-[#51946c] mb-2">UI/UX mockups for apps/websites</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹500-2000/mockup</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Mockup%20Design" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Service 19: Branding Services -->
+                <div class="service-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-6">
+                    <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2H0I7t4iP8H-QeGHPUz3CA5a6Bjc3WJ2-o_8Joa3VvkapfR819yqKPNOoyF_jJWQPZQ9f8pqWMiWyvVjuVFfYDor2Qm_YrEsucmpA5pNSd0hZR8XpsUxR79Ss4MISus84YGgdlepFZL7Y0u7U3xYei5WwNhaC-so58laYPSQ8L1zcY8PR96A09r_ndvOFaKfI5_y2ks28e6eThy6EwDGDpriJKZ86LTPmOZ15RUfazuEhL1Ga9ro87I_i8EaXM_WEI9aF5YaaN-c");'></div>
+                    <h3 class="text-xl font-bold mb-2">Branding Services</h3>
+                    <p class="text-[#51946c] mb-2">Logos, strategy, visual identity</p>
+                    <p class="text-[#0e1a13] font-bold mb-4">Price: ₹1000-5000/package</p>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20book%20Branding%20Services" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-4 py-2 rounded-lg text-sm font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 px-4 bg-[#f8fbfa]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose RazaWorks?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center gap-4 bg-white p-6 rounded-lg border border-[#d1e6d9]">
+                    <div class="text-[#0e1a13]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Fast Turnaround</h3>
+                </div>
+                <div class="flex items-center gap-4 bg-white p-6 rounded-lg border border-[#d1e6d9]">
+                    <div class="text-[#0e1a13]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Client-Centric Approach</h3>
+                </div>
+                <div class="flex items-center gap-4 bg-white p-6 rounded-lg border border-[#d1e6d9]">
+                    <div class="text-[#0e1a13]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M152,120H136V56h8a32,32,0,0,1,32,32,8,8,0,0,0,16,0,48.05,48.05,0,0,0-48-48h-8V24a8,8,0,0,0-16,0V40h-8a48,48,0,0,0,0,96h8v64H104a32,32,0,0,1-32-32,8,8,0,0,0-16,0,48.05,48.05,0,0,0,48,48h16v16a8,8,0,0,0,16,0V216h16a48,48,0,0,0,0-96Z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Competitive Pricing</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Payment Methods</h2>
+            <p class="text-lg text-center mb-8">Secure, fast payments – request QR code via WhatsApp</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <!-- UPI Payment Link -->
+                <a href="upi://pay?pa=YOUR_UPI_ID@oksbi&pn=RazaWorks&am=&cu=INR" 
+                   class="flex items-center gap-4 bg-[#f8fbfa] p-4 rounded-lg hover:bg-[#e8f2ec] transition-colors">
+                    <div class="bg-[#e8f2ec] p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M208,80a8,8,0,0,1-8,8H167.85c.09,1.32.15,2.65.15,4a60.07,60.07,0,0,1-60,60H92.69l72.69,66.08a8,8,0,1,1-10.76,11.84l-88-80A8,8,0,0,1,72,136h36a44.05,44.05,0,0,0,44-44c0-1.35-.07-2.68-.19-4H72a8,8,0,0,1,0-16h75.17A44,44,0,0,0,108,48H72a8,8,0,0,1,0-16H200a8,8,0,0,1,0,16H148.74a60.13,60.13,0,0,1,15.82,24H200A8,8,0,0,1,208,80Z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-medium">UPI</span>
+                </a>
+                
+                <!-- Google Pay Link -->
+                <a href="https://gpay.app.goo.gl/YourGooglePayLink" 
+                   class="flex items-center gap-4 bg-[#f8fbfa] p-4 rounded-lg hover:bg-[#e8f2ec] transition-colors">
+                    <div class="bg-[#e8f2ec] p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-medium">Google Pay</span>
+                </a>
+
+                <!-- PhonePe Link -->
+                <a href="phonepe://pay?pa=YOUR_UPI_ID@ybl&pn=RazaWorks" 
+                   class="flex items-center gap-4 bg-[#f8fbfa] p-4 rounded-lg hover:bg-[#e8f2ec] transition-colors">
+                    <div class="bg-[#e8f2ec] p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-medium">PhonePe</span>
+                </a>
+
+                <!-- Bank Transfer Link -->
+                <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20need%20bank%20details%20for%20transfer" 
+                   class="flex items-center gap-4 bg-[#f8fbfa] p-4 rounded-lg hover:bg-[#e8f2ec] transition-colors">
+                    <div class="bg-[#e8f2ec] p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-medium">Bank Transfer</span>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <!-- Request Payment Link Button -->
+                <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20please%20send%20me%20payment%20link" 
+                   class="bg-[#38e07b] text-[#0e1a13] px-8 py-3 rounded-lg text-lg font-bold hover:bg-[#2bc467] transition-colors inline-block">
+                    Request Payment Link
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Client Images -->
+    <section id="testimonials" class="py-16 px-4 bg-[#f8fbfa]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+            
+            <div class="flex overflow-x-auto gap-6 pb-6 scrollbar-hide">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg flex-shrink-0">
+                    <div class="w-20 h-20 bg-cover bg-center rounded-full mx-auto mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVl7spTiCTNU3xIcnBFCpc_PLtR2wg45jlIEJY579hs40kZa9tuamiTCWOFOHLZ85I15uLpgGBGBS4dKzd5j4uZ48I1tDI071N_NH7romvZK4eJ8B_6PPysxyiRjQOtXObyT0oXcEUdTy7OVX0x0jlnw-YI5Pv_qDaGUYjhBSvhVlotPDp39CMW1WyjlsOHf4EsxgoVROiTTQBppivr4NzLQjI8FlRMUl90RaENNqElmG5Uiva36GlexIZ6dgr32SPlVUiULwiYAg");'></div>
+                    <p class="text-lg italic mb-4 text-center">"Sahil's ATS resume got me hired! Professional and timely service."</p>
+                    <p class="font-bold text-[#0e1a13] text-center">- Ravi, Delhi</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg flex-shrink-0">
+                    <div class="w-20 h-20 bg-cover bg-center rounded-full mx-auto mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLdI-qmaxlbFePX-qMYSEkz3Zbe2oo1EWh_QJSXWO22F3zfRy3YNFR7SibNSzdPTCS79ZrJZC5VrJrhx2drdY-g4C4bp6z2urC-dnrcfoPk5KM6XYn0GigxJdnkcgFel7ezwM0NSy9ZCbBkMYzeN58_icu1WVfdAhgrgpe5WetUxAmBESFuT2WSZYjTpUonj4fx62RhgD9RcW_FsJJuzecmZ7YNyshy9jpl_xjGYsomxBRZjOIGY-fPJRsRFrXjurBDoZ7WLc3UBs");'></div>
+                    <p class="text-lg italic mb-4 text-center">"RazaWorks' branding elevated my business. Highly recommended!"</p>
+                    <p class="font-bold text-[#0e1a13] text-center">- Priya, Mumbai</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg flex-shrink-0">
+                    <div class="w-20 h-20 bg-cover bg-center rounded-full mx-auto mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAre_9srC6K955L3jKQY4ZW5n_TjNksCeneRu_hGgEuBs8J_tlZBxuq0TE6U2bNmatqNaDu_G2vMAevgwRj_FaBPzEx15f731lqowfRS8rAdq_Lr1DLunSjyR411I3oNepsmwXAUEaRahl2NGPPExr8s8OS2Rv4vYrewXnKdjk64sP35xXvwo8_bvBA9K7qmISUNarcRpCueWneriA2jlFneiO84wHdl5QvSgL_LkQf9oqTm1w-b8wsiViDl_EOHnBFmt5HKmqJ6EA");'></div>
+                    <p class="text-lg italic mb-4 text-center">"Stunning website, delivered fast! Exceeded my expectations."</p>
+                    <p class="font-bold text-[#0e1a13] text-center">- Anil, Bangalore</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Choose Your Plan</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Basic</h3>
+                    <div class="text-4xl font-black mb-6">₹500<span class="text-lg font-bold">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            5 tasks per month
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            Email support
+                        </li>
+                    </ul>
+                    <!-- Choose Basic Button with WhatsApp Link -->
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20choose%20Basic%20Plan%20(₹500/month)" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-6 py-3 rounded-lg font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Choose Basic
+                    </a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card bg-[#f8fbfa] border-2 border-[#38e07b] rounded-lg p-8 text-center relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-[#38e07b] text-[#0e1a13] px-3 py-1 rounded-full text-sm font-bold">Recommended</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                    <div class="text-4xl font-black mb-6">₹1500<span class="text-lg font-bold">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            15 tasks per month
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            Priority support
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            Dedicated manager
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20choose%20Pro%20Plan%20(₹1500/month)" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-6 py-3 rounded-lg font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Choose Pro
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card bg-[#f8fbfa] border border-[#d1e6d9] rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                    <div class="text-4xl font-black mb-6">₹3000<span class="text-lg font-bold">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            Unlimited tasks
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            24/7 support
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                            Custom solutions
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20choose%20Premium%20Plan%20(₹3000/month)" 
+                       class="bg-[#38e07b] text-[#0e1a13] px-6 py-3 rounded-lg font-bold w-full hover:bg-[#2bc467] transition-colors text-center block">
+                        Choose Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-[#f8fbfa]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Ready to Elevate Your Digital Presence?</h2>
+            <p class="text-lg mb-8">Contact us today to discuss your project and receive a personalized quote.</p>
+            <!-- Contact Book Now Button -->
+            <a href="https://wa.me/91YOUR_PHONE_NUMBER?text=Hello%20RazaWorks,%20I%20want%20to%20discuss%20a%20project" 
+               class="bg-[#38e07b] text-[#0e1a13] px-8 py-3 rounded-lg text-lg font-bold hover:bg-[#2bc467] transition-colors inline-block">
+                Book Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e1a13] text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">RazaWorks</h3>
+                    <p>Digital Solutions by Sahil Raza</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-[#38e07b] transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-[#38e07b] transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-[#38e07b] transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-[#38e07b] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-[#38e07b] transition-colors">Web Development</a></li>
+                        <li><a href="#services" class="hover:text-[#38e07b] transition-colors">Graphic Design</a></li>
+                        <li><a href="#services" class="hover:text-[#38e07b] transition-colors">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/91YOUR_PHONE_NUMBER" class="hover:text-[#38e07b] transition-colors">WhatsApp</a>
+                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="hover:text-[#38e07b] transition-colors">Instagram</a>
+                        <a href="https://linkedin.com/in/YOUR_LINKEDIN" class="hover:text-[#38e07b] transition-colors">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+                <p>&copy; 2024 RazaWorks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Add hover effects to pricing cards
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
