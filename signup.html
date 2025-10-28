@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RazaWorks | Authentication</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, "Noto Sans", sans-serif;
+      background-color: #f8fbfa;
+      color: #0e1a13;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .auth-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      width: 420px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 900;
+      color: #0e1a13;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #d1e6d9;
+      margin-bottom: 25px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 15px 0;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .tab.active {
+      color: #0e1a13;
+      border-bottom: 3px solid #38e07b;
+    }
+
+    .tab.inactive {
+      color: #51946c;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      background-color: #e8f2ec;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #0e1a13;
+      transition: all 0.3s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #38e07b;
+    }
+
+    .form-input::placeholder {
+      color: #51946c;
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: #38e07b;
+      color: #0e1a13;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+
+    .primary-btn:hover {
+      background-color: #2bc467;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 25px 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background-color: #d1e6d9;
+    }
+
+    .divider-text {
+      padding: 0 15px;
+      color: #51946c;
+      font-size: 14px;
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: #fff;
+      color: #0e1a13;
+      border: 1px solid #d1e6d9;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .google-btn:hover {
+      background-color: #f5f5f5;
+    }
+
+    .google-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .switch-text {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #51946c;
+    }
+
+    .switch-link {
+      color: #0e1a13;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .switch-link:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .message.success {
+      background-color: #e8f5e8;
+      color: #2d5a2d;
+    }
+
+    .message.error {
+      background-color: #fde8e8;
+      color: #8b2e2e;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .logout-container {
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .user-email {
+      color: #51946c;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Authentication Container -->
+  <div class="auth-container" id="authBox">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+      </svg>
+      <span class="logo-text">RazaWorks</span>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div id="signupTab" class="tab active">Sign Up</div>
+      <div id="loginTab" class="tab inactive">Login</div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm">
+      <div class="form-group">
+        <input type="text" id="signupName" class="form-input" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="signupEmail" class="form-input" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" id="signupPassword" class="form-input" placeholder="Password" required />
+      </div>
+      <button id="signupBtn" class="primary-btn">Sign Up</button>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-text">or</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <button id="googleSignupBtn" class="google-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-icon" />
+        Continue with Google
+      </button>
+
+      <p class="switch-text">
+        Already have an account? 
+        <a id="switchToLogin" class="switch-link">Login</a>
+      </p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="hidden">
+      <div class="form-group">
+        <input type="email" id="loginEmail" class="form-input" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" id="loginPassword" class="form-input" placeholder="Password" required />
+      </div>
+      <button id="loginBtn" class="primary-btn">Login</button>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-text">or</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <button id="googleLoginBtn" class="google-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-icon" />
+        Continue with Google
+      </button>
+
+      <p class="switch-text">
+        Don't have an account? 
+        <a id="switchToSignup" class="switch-link">Sign Up</a>
+      </p>
+      <p class="switch-text">
+        <a id="forgotLink" class="switch-link">Forgot password?</a>
+      </p>
+    </div>
+
+    <!-- Message Display -->
+    <div id="message" class="message"></div>
+  </div>
+
+  <!-- Logout Container -->
+  <div class="auth-container hidden" id="logoutBox">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+      </svg>
+      <span class="logo-text">RazaWorks</span>
+    </div>
+
+    <div class="logout-container">
+      <h2 class="welcome-text">Welcome 🎉</h2>
+      <p id="userEmail" class="user-email"></p>
+      <button id="logoutBtn" class="primary-btn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Supabase configuration
+    const SUPABASE_URL = "https://mogirffjqlbciwgyiqkx.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZ2lyZmZqcWxiY2l3Z3lpcWt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1NTgxNjksImV4cCI6MjA3NzEzNDE2OX0.Z0xlA19IbCdpBOqXRM_SLDcxC_Kii6MkyAwAvk262Jc";
+
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // DOM Elements
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+    
+    const loginBtn = document.getElementById("loginBtn");
+    const signupBtn = document.getElementById("signupBtn");
+    
+    const loginEmail = document.getElementById("loginEmail");
+    const loginPassword = document.getElementById("loginPassword");
+    const signupName = document.getElementById("signupName");
+    const signupEmail = document.getElementById("signupEmail");
+    const signupPassword = document.getElementById("signupPassword");
+    
+    const switchToSignup = document.getElementById("switchToSignup");
+    const switchToLogin = document.getElementById("switchToLogin");
+    const forgotLink = document.getElementById("forgotLink");
+    
+    const googleLoginBtn = document.getElementById("googleLoginBtn");
+    const googleSignupBtn = document.getElementById("googleSignupBtn");
+    
+    const message = document.getElementById("message");
+    const authBox = document.getElementById("authBox");
+    const logoutBox = document.getElementById("logoutBox");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const userEmail = document.getElementById("userEmail");
+
+    // Tab switching functionality
+    loginTab.addEventListener("click", () => {
+      showForm("login");
+    });
+
+    signupTab.addEventListener("click", () => {
+      showForm("signup");
+    });
+
+    switchToSignup.addEventListener("click", () => {
+      showForm("signup");
+    });
+
+    switchToLogin.addEventListener("click", () => {
+      showForm("login");
+    });
+
+    function showForm(formType) {
+      // Reset all tabs
+      loginTab.classList.remove("active");
+      loginTab.classList.add("inactive");
+      signupTab.classList.remove("active");
+      signupTab.classList.add("inactive");
+      
+      // Hide all forms
+      loginForm.classList.add("hidden");
+      signupForm.classList.add("hidden");
+      
+      // Clear message
+      message.textContent = "";
+      message.className = "message";
+      
+      // Activate selected tab and show corresponding form
+      if (formType === "login") {
+        loginTab.classList.remove("inactive");
+        loginTab.classList.add("active");
+        loginForm.classList.remove("hidden");
+      } else if (formType === "signup") {
+        signupTab.classList.remove("inactive");
+        signupTab.classList.add("active");
+        signupForm.classList.remove("hidden");
+      }
+    }
+
+    // Authentication functions
+    loginBtn.addEventListener("click", async () => {
+      const email = loginEmail.value.trim();
+      const password = loginPassword.value.trim();
+      
+      if (!email || !password) {
+        showMessage("Please fill all fields.", "error");
+        return;
+      }
+      
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
+      
+      if (error) {
+        showMessage(error.message, "error");
+      } else {
+        showMessage("Login successful!", "success");
+        showLogout(data.user);
+      }
+    });
+
+    signupBtn.addEventListener("click", async () => {
+      const email = signupEmail.value.trim();
+      const password = signupPassword.value.trim();
+      const name = signupName.value.trim();
+      
+      if (!email || !password || !name) {
+        showMessage("Please fill all fields.", "error");
+        return;
+      }
+      
+      const { error } = await sb.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } },
+      });
+      
+      if (error) {
+        showMessage(error.message, "error");
+      } else {
+        showMessage("Signup successful! Check your email to verify, then login.", "success");
+        showForm("login");
+      }
+    });
+
+    // Forgot password functionality
+    forgotLink.addEventListener("click", async () => {
+      const email = loginEmail.value.trim();
+      
+      if (!email) {
+        showMessage("Please enter your email first.", "error");
+        return;
+      }
+      
+      const { error } = await sb.auth.resetPasswordForEmail(email);
+      
+      if (error) {
+        showMessage(error.message, "error");
+      } else {
+        showMessage("Password reset email sent!", "success");
+      }
+    });
+
+    // Google OAuth
+    googleLoginBtn.addEventListener("click", async () => {
+      await sb.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: window.location.href
+        },
+      });
+    });
+
+    googleSignupBtn.addEventListener("click", async () => {
+      await sb.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: window.location.href
+        },
+      });
+    });
+
+    // Logout
+    logoutBtn.addEventListener("click", async () => {
+      await sb.auth.signOut();
+      authBox.classList.remove("hidden");
+      logoutBox.classList.add("hidden");
+    });
+
+    // Helper function to display messages
+    function showMessage(text, type) {
+      message.textContent = text;
+      message.className = "message";
+      
+      if (type === "success") {
+        message.classList.add("success");
+      } else if (type === "error") {
+        message.classList.add("error");
+      }
+    }
+
+    // Show user info after login
+    function showLogout(user) {
+      const name = user.user_metadata?.full_name || user.email;
+      userEmail.textContent = "Logged in as: " + name;
+      
+      // Hide auth forms and show logout box
+      authBox.classList.add("hidden");
+      logoutBox.classList.remove("hidden");
+
+      // 3-second redirect
+      setTimeout(() => {
+        window.location.href = "https://youtu.be/zA5kv1P_p7I?si=M1XNS4aZThSFE8f4";
+      }, 3000);
+    }
+
+    // Check if user is already logged in
+    (async () => {
+      const { data } = await sb.auth.getUser();
+      if (data.user) {
+        showLogout(data.user);
+      }
+    })();
+  </script>
+</body>
+</html>
