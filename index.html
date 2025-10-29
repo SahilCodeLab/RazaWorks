@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - RazaWorks</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(56, 224, 123, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(56, 224, 123, 0.6);
+                transform: scale(1.05);
+            }
+        }
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+        }
+        @keyframes progress-fill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #38e07b }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .animate-orbit {
+            animation: orbit 8s linear infinite;
+        }
+        .animate-progress {
+            animation: progress-fill 3s ease-in-out forwards;
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: .15em solid #38e07b;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fbfa 0%, #e8f2ec 50%, #d1e6d9 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="gradient-bg font-['Inter','Noto_Sans',sans-serif] min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-40 h-40 bg-[#38e07b] rounded-full opacity-10 animate-float"></div>
+        <div class="absolute top-1/4 -right-20 w-32 h-32 bg-[#0e1a13] rounded-full opacity-5 animate-float" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-1/3 left-1/4 w-24 h-24 bg-[#38e07b] rounded-full opacity-10 animate-float" style="animation-delay: -4s;"></div>
+        <div class="absolute bottom-20 right-1/4 w-36 h-36 bg-[#0e1a13] rounded-full opacity-5 animate-float" style="animation-delay: -1s;"></div>
+    </div>
+
+    <div class="relative max-w-2xl w-full mx-4 z-10">
+        <!-- Main Loading Card -->
+        <div class="glass-effect rounded-3xl shadow-2xl p-8 mb-8">
+            <!-- Header with Animated Logo -->
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="relative">
+                        <div class="size-16 bg-gradient-to-br from-[#38e07b] to-[#2bc467] rounded-2xl flex items-center justify-center animate-pulse-glow shadow-lg">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-8 text-white">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- Orbiting dots -->
+                        <div class="absolute top-0 left-0 w-full h-full">
+                            <div class="animate-orbit">
+                                <div class="size-3 bg-[#38e07b] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl font-black bg-gradient-to-r from-[#0e1a13] to-[#38e07b] bg-clip-text text-transparent">RazaWorks</h1>
+                </div>
+                <p class="text-xl text-[#51946c] font-medium">Digital Solutions by Sahil Raza</p>
+            </div>
+
+            <!-- Animated Loading Section -->
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-[#0e1a13] mb-4 typing-animation w-fit mx-auto">
+                    Crafting Your Digital Experience
+                </h2>
+                
+                <!-- Progress Container -->
+                <div class="max-w-md mx-auto">
+                    <div class="flex justify-between text-sm text-[#51946c] mb-2">
+                        <span>Loading</span>
+                        <span id="progress-text" class="font-bold">0%</span>
+                    </div>
+                    <div class="h-3 bg-[#e8f2ec] rounded-full overflow-hidden shadow-inner">
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-[#38e07b] to-[#2bc467] rounded-full animate-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Steps -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="text-center">
+                    <div class="size-12 mx-auto mb-2 bg-[#f8fbfa] rounded-full flex items-center justify-center border-2 border-[#38e07b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#38e07b" viewBox="0 0 256 256">
+                            <path d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium text-[#0e1a13]">Initializing</p>
+                </div>
+                <div class="text-center">
+                    <div class="size-12 mx-auto mb-2 bg-[#f8fbfa] rounded-full flex items-center justify-center border-2 border-[#d1e6d9]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d1e6d9" viewBox="0 0 256 256">
+                            <path d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49.14c10.55-12.33,24-24.58,40.72-34.62a80,80,0,1,1,1.74,142.8,8,8,0,1,0-5.6,15.05A96,96,0,1,0,128,32Z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm text-[#51946c]">Processing</p>
+                </div>
+                <div class="text-center">
+                    <div class="size-12 mx-auto mb-2 bg-[#f8fbfa] rounded-full flex items-center justify-center border-2 border-[#d1e6d9]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d1e6d9" viewBox="0 0 256 256">
+                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h40A8,8,0,0,1,176,128Z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm text-[#51946c]">Finalizing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Showcase -->
+        <div class="glass-effect rounded-3xl shadow-2xl p-6">
+            <h3 class="text-lg font-bold text-[#0e1a13] mb-4 text-center">Premium Digital Services</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="group text-center p-3 rounded-xl bg-white/50 hover:bg-white transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="size-10 mx-auto mb-2 bg-gradient-to-br from-[#38e07b] to-[#2bc467] rounded-lg flex items-center justify-center group-hover:animate-pulse-glow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 256 256">
+                            <path d="M216,40H40A16,16,0,0,0,24,56V184a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,144H40V56H216V184ZM80,96a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,96Zm0,32a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,128Zm0,32a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H88A8,8,0,0,1,80,160Z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-medium text-[#0e1a13]">Web Design</span>
+                </div>
+                <div class="group text-center p-3 rounded-xl bg-white/50 hover:bg-white transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="size-10 mx-auto mb-2 bg-gradient-to-br from-[#38e07b] to-[#2bc467] rounded-lg flex items-center justify-center group-hover:animate-pulse-glow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 256 256">
+                            <path d="M200,32H163.74a47.92,47.92,0,0,0-71.48,0H56A16,16,0,0,0,40,48V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm-72,0a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Zm72,184H56V48H80v32h96V48h24Z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-medium text-[#0e1a13]">Resume Writing</span>
+                </div>
+                <div class="group text-center p-3 rounded-xl bg-white/50 hover:bg-white transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="size-10 mx-auto mb-2 bg-gradient-to-br from-[#38e07b] to-[#2bc467] rounded-lg flex items-center justify-center group-hover:animate-pulse-glow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 256 256">
+                            <path d="M240,126.31a8,8,0,0,1-5,7.44L203.65,148,218,186.73a8,8,0,0,1-11.78,8.81L128,161.43,49.82,195.54a8,8,0,0,1-11.78-8.81L52.35,148,21,133.75a8,8,0,0,1,0-14.88L52.35,104,38,65.27a8,8,0,0,1,11.78-8.81L128,94.57l78.18-34.11A8,8,0,0,1,218,65.27L203.65,104,235,118.87A8,8,0,0,1,240,126.31Z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-medium text-[#0e1a13]">Branding</span>
+                </div>
+                <div class="group text-center p-3 rounded-xl bg-white/50 hover:bg-white transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="size-10 mx-auto mb-2 bg-gradient-to-br from-[#38e07b] to-[#2bc467] rounded-lg flex items-center justify-center group-hover:animate-pulse-glow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 256 256">
+                            <path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C231,128.13,223.84,141.92,207.93,158.75,185.67,180.81,158.78,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-medium text-[#0e1a13]">Digital Marketing</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Message -->
+        <div class="text-center mt-6">
+            <p class="text-sm text-[#51946c] flex items-center justify-center gap-2">
+                <svg class="animate-spin size-4 text-[#38e07b]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Preparing your digital journey...
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced loading simulation
+        let progress = 0;
+        const progressText = document.getElementById('progress-text');
+        const progressBar = document.getElementById('progress-bar');
+        const steps = document.querySelectorAll('.text-center:nth-child(2) .size-12');
+        
+        const interval = setInterval(() => {
+            progress += Math.random() * 12;
+            if (progress > 100) {
+                progress = 100;
+                clearInterval(interval);
+                
+                // Update steps to completed state
+                steps.forEach(step => {
+                    step.classList.remove('border-[#d1e6d9]');
+                    step.classList.add('border-[#38e07b]');
+                    const svg = step.querySelector('svg');
+                    svg.setAttribute('fill', '#38e07b');
+                });
+                
+                // Redirect to main page after completion
+                setTimeout(() => {
+                    window.location.href = 'main.html';
+                }, 1000);
+            }
+            
+            // Update progress display
+            const currentProgress = Math.min(progress, 100);
+            progressText.textContent = currentProgress.toFixed(0) + '%';
+            progressBar.style.width = currentProgress + '%';
+            
+            // Update steps based on progress
+            if (currentProgress > 30 && currentProgress < 70) {
+                steps[1].classList.remove('border-[#d1e6d9]');
+                steps[1].classList.add('border-[#38e07b]');
+                steps[1].querySelector('svg').setAttribute('fill', '#38e07b');
+            } else if (currentProgress > 70) {
+                steps[2].classList.remove('border-[#d1e6d9]');
+                steps[2].classList.add('border-[#38e07b]');
+                steps[2].querySelector('svg').setAttribute('fill', '#38e07b');
+            }
+            
+        }, 200);
+    </script>
+</body>
+</html>
